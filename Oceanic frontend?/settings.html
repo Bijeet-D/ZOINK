@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="center-content">
+    <div class="main-settings">
+        <div class="setting-section-cloak">
+            <h1>Tab Cloak</h1>
+
+               <div class="presets-cloak">
+                    
+                    <button>Google Classroom</button>
+                    <button>Clever</button>
+                    <button>Gmail</button>
+
+               </div>
+               
+
+                <button id="save-costum-favicon">Save</button>
+
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        //https://icon.horse/icon/${ICON}
+        document.querySelector("#cloaksDropdown").addEventListener("click", () => {
+
+        });
+    </script>
+    <style>
+        :root {
+            --buttonBg: rgba(8, 23, 181, 0.703);
+            --mainBg: rgba(0, 217, 255, 0);
+            --innerSectionBg: rgba(255, 255, 255, 0.441);
+            --innetSectionFil: blur(10px);
+        }
+
+        .main-settings {
+            width: 65vw;
+            background-color: var(--mainBg);
+        }
+
+        .setting-section-cloak {
+            display: flex;
+            flex-shrink: 0;   /* prevents shrinking */
+            flex-grow: 0;     /* prevents growing */
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--innerSectionBg);
+            backdrop-filter: var(--innetSectionFil);
+            width: 90%;
+            height: fit-content;
+            border-radius: 30px;
+            padding: 30px;
+        }
+
+        .center-content {
+            display: flex;
+            justify-content: center;
+        }
+        /*
+        -----------------------------------
+        -- +++ ==TAB CLOAK STYLING== +++ -- 
+        -----------------------------------
+        */
+
+        .presets-cloak {
+            display: flex;
+
+            button {
+                background-color: var(--buttonBg);
+                color: aliceblue;
+                border: none;
+                cursor: pointer;
+                width: 10rem;
+                height: 2rem;
+                margin: 10px;
+            }
+
+        }
+
+    </style>
+</body>
+</html>

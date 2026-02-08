@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .dropdown {
+            width: 12rem;
+            height: 2.5rem;
+        }
+
+
+
+        .dropdown-options {
+            position: absolute;
+            list-style: none;
+            display: none;
+            padding-left: 0px;
+            margin-top: 4px;
+            width: fit-content;
+            background-color: rgb(202, 202, 202);
+        }
+
+        .dropdown-options li {
+            position: relative;
+            display: flex;
+            align-items: center; 
+            padding-left: 20px;
+            z-index: 2;
+            width: 12rem;
+            height: 2.5rem;
+            box-sizing: border-box;
+            cursor: pointer;
+            color: aliceblue;
+        }
+
+        .dropdown-options li:hover {
+            background-color: rgb(199, 199, 199);
+        }
+
+        .hiddenDropdownOp {
+            display: none !important;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="dropdown-holder">
+    <button class="dropdown">
+        Loading...
+
+    </button>
+    <ul class="dropdown-options">
+        <li>Idk option one</li>
+        <li>Idk other opt</li>
+        <li>iifuhwiu</li>
+        <li>abcdefg</li>
+    </ul>
+    </div>
+
+    <h1>OPTION 2</h1>
+<div class="dropdown-holder">
+    <button class="dropdown">
+    </button>
+    <ul class="dropdown-options">
+        <li>Idk w</li>
+        <li>idk333</li>
+        <li>8392y9f8h</li>
+    </ul>
+    </div>
+
+        <script>
+
+            console.log("test")
+
+            document.querySelectorAll('.dropdown').forEach(btn => {
+                let ul = btn.nextElementSibling;
+
+                let ulDisplay = 'block'
+
+                let showOp = ul.firstElementChild;
+                showOp.classList.add("hiddenDropdownOp")
+
+                btn.textContent = showOp.textContent
+                btn.setAttribute('data-selected', btn.textContent)
+
+                btn.addEventListener("click", () => {
+                    console.log(ul.style.display)
+
+                    if (ul.style.display == '' || ul.style.display == 'none') {
+                        ul.style.display = ulDisplay
+                    } else if (ul.style.display == ulDisplay) {
+                        ul.style.display = 'none'
+                    }
+
+                })
+
+               Array.from(ul.children).forEach (li => {
+
+                    li.addEventListener("click", () => {
+                        //remove hidden from all
+                        Array.from(ul.children).forEach(li => {
+                            li.classList.remove('hiddenDropdownOp')
+                        })
+                        li.classList.add('hiddenDropdownOp')
+                        btn.textContent = li.textContent
+
+                        ul.style.display = 'none'
+                    })
+
+                })
+                
+
+            });
+
+        </script>
+
+</body>
+</html>
