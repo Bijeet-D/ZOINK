@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<title>Atlantis</title>
+
+		<link rel="shortcut icon" content="favicon.webp" />
+	<!--
+		<script src="/scram/scramjet.all.js"></script>
+		<script src="/baremux/index.js"></script>
+		<script src="register-sw.js" defer></script>
+		<script src="search.js" defer></script>
+		<script src="index.js" defer></script>
+	 UNCOMENT.   !!!!!!-->
+	 		<link rel="stylesheet" href="index.css" />
+
+	</head>
+
+	<body>
+	<main>
+		<div class="vanta" style="position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: none;"></div>
+
+		<iframe src="/start.html" id="content-frame"></iframe>
+		<div class="header-main">
+			<img id="logo" src="img/oceanic-logo.png" class="btn-element" onclick="sideBarIconOnClick('start.html')">
+			<p>⸻</p>
+			<img id="search-img" src="img/searchIcon.png" class="btn-element"> <!--style="filter: brightness(1.1);"-->
+			<img id="gms-img" src="img/GameLogoOceanicSqaure.png" class="btn-element" onclick="sideBarIconOnClick('gms.html')" style="filter: brightness(0.9);">
+			<img id="apps" src="img/AppsIconOceanic.png" class="btn-element" onclick="sideBarIconOnClick('apps.html')">
+			<img id="ai" src="img/AILogoOceanic.png" class="btn-element"  onclick="sideBarIconOnClick('ai.html')">
+			<p id="hor-bar-top">⸻</p>
+			<img id="setting-img" src="img/SettingIconOceanic.png" class="btn-element" onclick="sideBarIconOnClick('settings.html')">  
+			<img id="github-icon-img" src="img/GithubIconOceanic.png" class="btn-element">
+		</div>
+
+
+</main>
+<style>
+	body {
+		overflow: hidden;
+	}
+
+	body::before {
+		content: '';
+		background-color: rgba(0, 200, 255, 0);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100vw;
+		height: 100vh;
+	}
+</style>
+	<script>
+
+		const mainFrame = document.getElementById("content-frame");
+
+		function sideBarIconOnClick(page) {
+			mainFrame.src = page;
+		}
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+<script>
+VANTA.FOG({
+  el: ".vanta",
+   mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  highlightColor: 0x0,
+  midtoneColor: 0x0,
+  lowlightColor: 0x0,
+  baseColor: 0x2161,
+  speed: 0.60
+})
+</script>
+
+
+	</body>
+</html>
